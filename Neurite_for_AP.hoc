@@ -1,0 +1,34 @@
+//note: this file is the same as Neurite_for_AP_updated_final_longer_4000, loads AP_updated_final_longer_4000 on the lab drive.
+create axon, dend
+  connect dend(0), axon(1)
+
+	axon {
+		nseg = 1000
+		diam = 2.5
+		L = 1000
+		Ra = 100
+		insert hh
+			gnabar_hh = 0.040
+			gkbar_hh = 0.006
+			gl_hh = 7.3e-5
+			el_hh = -60
+			ena = 45
+			ek = -80
+		}
+		
+	dend {
+		nseg = 4000
+		diam = 2.5
+		L = 4000
+		Ra = 100
+		insert pas
+		g_pas = 7.3e-5
+		e_pas = -60
+		}
+
+load_file("AP_session.ses")
+run()
+
+
+
+

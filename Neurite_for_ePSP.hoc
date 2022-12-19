@@ -1,0 +1,30 @@
+
+create soma, dend
+  connect dend(0), soma(1)
+
+	soma {
+		nseg = 10
+		diam = 2.5
+		L = 10
+		Ra = 100
+		insert hh
+			gnabar_hh = 0
+			gkbar_hh = 0
+			gl_hh = 7.3e-5
+			el_hh = -60
+		}
+		
+	dend {
+		nseg = 4000
+		diam = 2.5
+		L = 4000
+		Ra = 100
+		insert pas
+		g_pas = 7.3e-5
+		e_pas = -60
+		}
+
+load_file("ePSP_session.ses")
+run()
+
+
